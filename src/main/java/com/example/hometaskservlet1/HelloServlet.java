@@ -37,7 +37,7 @@ public class HelloServlet extends HttpServlet {
         Double result=0.0;
         try
         {
-            Double firstDouble = Double.valueOf(firstNum);
+            int firstDouble = Integer.valueOf(firstNum);
             int secondDouble = Integer.valueOf(secondNum);
             if(action.equals("+"))
             {
