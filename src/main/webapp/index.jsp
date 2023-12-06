@@ -5,8 +5,6 @@
     <title>JSP</title>
 </head>
 <body>
-
-
     <form action="hello-servlet" method="get" >
         <fieldset style="display: inline-block; border-color: blue; border-width: 6px;border-radius: 25px; position: fixed; top: 50%;left: 50%;margin: -200px 0px 0px  -200px;">
             <legend>Форма регистрации</legend>
@@ -68,8 +66,16 @@
         <input type="reset" style="position: fixed; top: 50%; left: 45%; margin: 120px 0px 0px 0px" >
         <input type="submit" style="position: fixed; top: 50%; left: 50%; margin: 120px 0px 0px 50px">
     </form>
-
 <br/>
+    <!--HomeTaskJSP1-->
+    <h1>7+7 = <%=7+7%></h1>
+    <h1>8*2 = <%=8*2%></h1>
+    <%
+        for (int i = 0; i < 5; i++)
+        {
+            out.println("<br>JSP"+i);
+        }
+    %>
 <!--<a href="hello-servlet">Hello Servlet</a>-->
 </body>
 </html>

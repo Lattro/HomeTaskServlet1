@@ -71,7 +71,6 @@ public class HelloServlet extends HttpServlet {
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
-
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
@@ -91,6 +90,32 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>"+ getVal(id)+"</h1>");
         out.println("<h1>"+arithmeticAction(firstNum,secondNum,arithmeticAction));
         out.println("</body></html>");
+        Cookie [] cookies = request.getCookies();
+        String cookieName = "user";
+        Cookie cookie = null;
+        if(cookies!= null)
+        {
+            for (Cookie c: cookies)
+            {
+                if(cookieName.equals(c.getName()))
+                {
+                    cookie=c;
+                    break;
+                }
+            }
+        out.println("<h1>"+cookie.getValue()+"</h1>");
+        }
+        HttpSession session = request.getSession();
+        String name1 =(String) session.getAttribute("name");
+        if(name1==null)
+        {
+            session.setAttribute("name","weqwewqe");
+            out.println("Atribute is set");
+        }
+        else
+        {
+            out.println(name1);
+        }
 //
 //        String path = "/time.jsp";
 //        ServletContext servletContext= getServletContext();
