@@ -68,14 +68,35 @@
     </form>
 <br/>
     <!--HomeTaskJSP1-->
+    <fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">
+<legend>HomeTaskJSP1</legend>
     <h1>7+7 = <%=7+7%></h1>
     <h1>8*2 = <%=8*2%></h1>
     <%
+
         for (int i = 0; i < 5; i++)
         {
             out.println("<br>JSP"+i);
         }
     %>
+ </fieldset>
+<br>
+    <!--HomeTaskJSP2-->
+    <fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">
+        <legend>HomeTaskJSP2</legend>
+        <%!
+        public int multiplcation(int i)
+        {
+            return i*10;
+        }
+   %>
+    <%
+        for (int i = 0; i < 10; i++)
+        {
+            out.println(multiplcation(i)+"; ");
+        }
+    %>
+    </fieldset>
 <!--<a href="hello-servlet">Hello Servlet</a>-->
 </body>
 </html>
