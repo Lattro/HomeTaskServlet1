@@ -7,7 +7,7 @@
 <body>
 
 
-    <form action="hello-servlet" method="post" >
+    <form action="hello-servlet" method="get" >
         <fieldset style="display: inline-block; border-color: blue; border-width: 6px;border-radius: 25px; position: fixed; top: 50%;left: 50%;margin: -200px 0px 0px  -200px;">
             <legend>Форма регистрации</legend>
             <table>

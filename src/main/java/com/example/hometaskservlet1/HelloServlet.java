@@ -3,6 +3,10 @@ package com.example.hometaskservlet1;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.DispatcherType;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
@@ -16,6 +20,7 @@ public class HelloServlet extends HttpServlet {
 
     public String getVal(String value)
     {
+
         Double val;
         try
         {
@@ -33,26 +38,26 @@ public class HelloServlet extends HttpServlet {
         try
         {
             Double firstDouble = Double.valueOf(firstNum);
-            Double secondDouble = Double.valueOf(secondNum);
+            int secondDouble = Integer.valueOf(secondNum);
             if(action.equals("+"))
             {
-                result = firstDouble+secondDouble;
+                result =Double.valueOf(firstDouble+secondDouble);
             }
             else if(action.equals("-"))
             {
-                result = firstDouble-secondDouble;
+                result = Double.valueOf(firstDouble-secondDouble);
             }
             else if(action.equals("*"))
             {
-                result = firstDouble*secondDouble;
+                result = Double.valueOf(firstDouble*secondDouble);
             }
             else if(action.equals("/"))
             {
-                result = firstDouble/secondDouble;
+                result = Double.valueOf(firstDouble/secondDouble);
             }
             else if(action.equals("%"))
             {
-                result = firstDouble%secondDouble;
+                result = Double.valueOf(firstDouble%secondDouble);
             }
         }
         catch (NumberFormatException e)
@@ -62,8 +67,11 @@ public class HelloServlet extends HttpServlet {
         return "Result of action '"+action+"' - "+String.valueOf(result);
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    }
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
+
         String id = request.getParameter("id");
         String name = request.getParameter("name");
         String surname = request.getParameter("surname");
@@ -83,7 +91,11 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>"+ getVal(id)+"</h1>");
         out.println("<h1>"+arithmeticAction(firstNum,secondNum,arithmeticAction));
         out.println("</body></html>");
+//
+//        String path = "/time.jsp";
+//        ServletContext servletContext= getServletContext();
+//        RequestDispatcher dispatcher = servletContext.getRequestDispatcher(path);
+//        dispatcher.forward(request,response);
     }
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {}
     public void destroy() {}
 }
