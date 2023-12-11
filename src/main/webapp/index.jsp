@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="header.html"/>
-    <form action="hello-servlet" method="get" >
+    <form action="postuser.jsp" method="get" >
         <fieldset style="display: inline-block; border-color: blue; border-width: 6px;border-radius: 25px; position: fixed; top: 50%;left: 50%;margin: -200px 0px 0px  -200px;">
             <legend>Форма регистрации</legend>
             <table>
@@ -102,10 +102,10 @@
     </fieldset>
 <br>
 <!-- HomeTaskJSP3-->
-<fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">
-    <legend>HomeTaskJSP3</legend>
-<h1>number*10 =  <%= Integer.valueOf(request.getParameter("number"))*10%></h1>
-</fieldset>
-<!--<a href="hello-servlet">Hello Servlet</a>-->
+<%--<fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">--%>
+<%--    <legend>HomeTaskJSP3</legend>--%>
+<%--<h1>number*10 =  <%= Integer.valueOf(request.getParameter("number"))*10%></h1>--%>
+<%--</fieldset>--%>
+
 </body>
 </html>
