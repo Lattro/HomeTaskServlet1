@@ -12,5 +12,6 @@
 </head>
 <body>
 <h2>dddddddddd</h2>
+<% int a=2344444; %>
 </body>
 </html>

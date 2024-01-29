@@ -7,6 +7,7 @@
 </head>
 <body>
 <jsp:include page="header.html"/>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <form action="postuser.jsp" method="get" >
         <fieldset style="display: inline-block; border-color: blue; border-width: 6px;border-radius: 25px; position: fixed; top: 50%;left: 50%;margin: -200px 0px 0px  -200px;">
             <legend>Форма регистрации</legend>
@@ -64,6 +65,12 @@
                 </select></td>
             </tr>
         </table>
+            <table>
+                <tr>
+                    <td>Истино <input type="radio" name="bool" value="true">
+                        Ложно <input type="radio" name="bool" value="false"></td>
+                </tr>
+            </table>
         </fieldset>
         <input type="reset" style="position: fixed; top: 50%; left: 45%; margin: 120px 0px 0px 0px" >
         <input type="submit" style="position: fixed; top: 50%; left: 50%; margin: 120px 0px 0px 50px">
@@ -84,28 +91,27 @@
  </fieldset>
 <br>
     <!--HomeTaskJSP2-->
-    <fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">
-        <legend>HomeTaskJSP2</legend>
-        <%!
-        public int multiplcation(int i)
-        {
-            return i*10;
-        }
-   %>
-    <%
-        for (int i = 0; i < 10; i++)
-        {
-            out.println(multiplcation(i)+"; ");
-        }
-    %>
-        <%= new Calculator().GetSquare(10)%>
-    </fieldset>
-<br>
+<%--    <fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">--%>
+<%--        <legend>HomeTaskJSP2</legend>--%>
+<%--        <%!--%>
+<%--        public int multiplcation(int i)--%>
+<%--        {--%>
+<%--            return i*10;--%>
+<%--        }--%>
+<%--   %>--%>
+<%--    <%--%>
+<%--        for (int i = 0; i < 10; i++)--%>
+<%--        {--%>
+<%--            out.println(multiplcation(i)+"; ");--%>
+<%--        }--%>
+<%--    %>--%>
+<%--        <%= new Calculator().GetSquare(10)%>--%>
+<%--    </fieldset>--%>
+<%--<br>--%>
 <!-- HomeTaskJSP3-->
 <%--<fieldset style="display: inline-block; border-color: blue; border-width: 2px;border-radius: 25px;">--%>
 <%--    <legend>HomeTaskJSP3</legend>--%>
 <%--<h1>number*10 =  <%= Integer.valueOf(request.getParameter("number"))*10%></h1>--%>
 <%--</fieldset>--%>
-
 </body>
 </html>

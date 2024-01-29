@@ -67,9 +67,59 @@ public class HelloServlet extends HttpServlet {
         return "Result of action '"+action+"' - "+String.valueOf(result);
     }
 
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+    {
+//        response.setContentType("text/html");
+//        String id = request.getParameter("id");
+//        String name = request.getParameter("name");
+//        String surname = request.getParameter("surname");
+//        String age = request.getParameter("age");
+//        String gender = request.getParameter("gender");
+//        String country = request.getParameter("country");
+//        String arithmeticAction = request.getParameter("arithmeticAction");
+//        String firstNum = request.getParameter("firstNum");
+//        String secondNum = request.getParameter("secondNum");
+//        PrintWriter out = response.getWriter();
+//        out.println("<html><body>");
+//        out.println("<h1> name - " + name + "</h1>");
+//        out.println("<h1> surname - " + surname + "</h1>");
+//        out.println("<h1> age - " + age + "</h1>");
+//        out.println("<h1> gender - " + gender + "</h1>");
+//        out.println("<h1> country - "+country+"</h1>");
+//        out.println("<h1>"+ getVal(id)+"</h1>");
+//        out.println("<h1>"+arithmeticAction(firstNum,secondNum,arithmeticAction));
+//        out.println("</body></html>");
+//        Cookie [] cookies = request.getCookies();
+//        String cookieName = "user";
+//        Cookie cookie = null;
+//        if(cookies!= null)
+//        {
+//            for (Cookie c: cookies)
+//            {
+//                if(cookieName.equals(c.getName()))
+//                {
+//                    cookie=c;
+//                    break;
+//                }
+//            }
+//            out.println("<h1>"+cookie.getValue()+"</h1>");
+//        }
+//        HttpSession session = request.getSession();
+//        String name1 =(String) session.getAttribute("name");
+//        if(name1==null)
+//        {
+//            session.setAttribute("name","weqwewqe");
+//            out.println("Atribute is set");
+//        }
+//        else
+//        {
+//            out.println(name1);
+//        }
+//        request.setAttribute("name","removeFroServletToJSP");
+//        getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+
         response.setContentType("text/html");
         String id = request.getParameter("id");
         String name = request.getParameter("name");
@@ -116,6 +166,10 @@ public class HelloServlet extends HttpServlet {
         {
             out.println(name1);
         }
+        request.setAttribute("name","removeFroServletToJSP");
+        getServletContext().getRequestDispatcher("/index.jsp").forward(request,response);
+
+
 //
 //        String path = "/time.jsp";
 //        ServletContext servletContext= getServletContext();

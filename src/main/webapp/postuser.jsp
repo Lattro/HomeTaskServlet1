@@ -7,6 +7,7 @@
 --%>
 <!--HomeTaskJSP4-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>HomeTaskJSP4</title>
@@ -35,6 +36,14 @@
         <td><%= request.getParameter("country")%></td>
     </tr>
 </table>
-
+<br>
+<!-- HomeTaskJSP5-->
+<% request.setAttribute("bool",request.getParameter("bool")); %>
+<c:if test="${bool==true}">
+    <p>its true</p>
+</c:if>
+<c:if test="${bool==false}">
+    <p>not true</p>
+</c:if>
 </body>
 </html>
